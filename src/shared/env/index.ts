@@ -1,5 +1,3 @@
-// * ARQUIVO PARA VALIDAÇÃO DAS VARIÁVEIS DE AMBIENTE (.ENV)
-
 import 'dotenv/config'
 import { z } from 'zod'
 
