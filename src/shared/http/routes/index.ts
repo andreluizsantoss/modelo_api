@@ -1,17 +1,12 @@
-import { AppError } from '@shared/errors/app_error'
 import { Router } from 'express'
+import productRouter from 'src/modules/products/infra/http/routes/ProdutcRoutes'
 
 const routes = Router()
 
-// * Chamada utilizando - ARROW FUNCTION (=>)
-routes.get('/', (request, response) => {
-  // throw new AppError('Servidor já era !!!', 503)
-  throw new Error()
-  response.json({
-    message: 'Deu tudo certo !!!!!',
-  })
-})
+// routes.get('/', (request, response) => {
+//   response.json({ message: 'tudo ok' })
+// })
 
-const teste = 'apenas testar'
+routes.use('/product', productRouter)
 
-export { routes, teste }
+export { routes }

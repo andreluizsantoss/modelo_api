@@ -1,7 +1,9 @@
 import { prisma } from '@shared/http/lib/prisma'
 import { IProduto } from '../../domain/models/IProduto'
 import { IProdutoRepository } from '../../domain/repositories/IProdutoRepository'
+import { injectable } from 'tsyringe'
 
+@injectable()
 export class ProdutoRepository implements IProdutoRepository {
   async findAllProducts(): Promise<IProduto[]> {
     const products = await prisma.produto.findMany()
